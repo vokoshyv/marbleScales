@@ -58,6 +58,36 @@ questions!
 var findOddMarble = function(set){
   // your work here
 
+  var work1 = set.weigh([0,1,2],[3,4,5]);
+  
+  if (work1[0] === work1[1]){
+    var work2 = set.weigh([6], [7]);
+    if (work2[0] === work2[1]){
+      return 8;
+    } else if (work2[0] > work2[1]){
+      return 6;
+    } else {
+      return 7;
+    }
+  } else if (work1[0] > work1[1]){
+    var work2 = set.weigh([0], [1]);
+    if (work2[0] === work2[1]){
+      return 2;
+    }else if (work2[0] > work2[1]){
+      return 0;
+    } else {
+      return 1;
+    }
+  } else {
+    var work2 = set.weigh([3], [4]);
+    if (work2[0] === work2[1]){
+      return 5;
+    } else if (work2[0] > work2[1]){
+      return 3;
+    } else {
+      return 4;
+    }
+  }
 }
 
 
