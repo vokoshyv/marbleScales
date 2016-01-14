@@ -1,23 +1,29 @@
-var Scale = function(){
+var Scale = function(marbleNumber, weight){
   this.used = 0;
-  this.marbles = [50,50,50,50,50,50,50,50,50,50,50,50];
-}
+  // this.marbles = [50,50,50,50,50,50,50,50,50,50,50,50];
 
-Scale.prototype.set = function(marbleNumber, weight){
-  // weight should be 1 or 3
-  if (weight !== 49 && weight !== 51){
-    console.error('weight has to be 49 or 51');
+  if (weight !== 'heavier' && weight !== 'lighter'){
+    console.error('2nd argument has to be "heavier" or "lighter"');
+    return;
   }
-
-  // reset the marbles' weight to be all 50
-  this.marbles = [50,50,50,50,50,50,50,50,50,50,50,50];
-
-  // change the specified marble number
-  this.marbles[marbleNumber] = weight;
-
-  // reset the number of times the scale has been used
-  this.used = 0;
+  var hidden= [50,50,50,50,50,50,50,50,50,50,50,50];
 }
+
+// Scale.prototype.set = function(marbleNumber, weight){
+//   // weight should be 1 or 3
+//   if (weight !== 49 && weight !== 51){
+//     console.error('weight has to be 49 or 51');
+//   }
+
+//   // reset the marbles' weight to be all 50
+//   this.marbles = [50,50,50,50,50,50,50,50,50,50,50,50];
+
+//   // change the specified marble number
+//   this.marbles[marbleNumber] = weight;
+
+//   // reset the number of times the scale has been used
+//   this.used = 0;
+// }
 
 Scale.prototype.weigh = function(left, right){
 
