@@ -1,6 +1,6 @@
 /*
 
-Of Marbles and Scales
+Of Marbles and Scales - HARD MODE
 
 ***The problem: You have a 11 marbles of equal weight and one
 that is either heavier or lighter. Your goal, using a 
@@ -59,8 +59,8 @@ questions!
 var findOddMarble = function(set){
   // your work here
 
-  
+
 }
 
-
+// DON'T TOUCH ME
 module.exports = findOddMarble;
