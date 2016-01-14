@@ -87,7 +87,7 @@ var Batch = function(marbleNumber, weight){
     var leftWeight = left.reduce(function(sum, index){return sum + hidden[index]}, 0);
     var rightWeight = right.reduce(function(sum, index){return sum + hidden[index]}, 0);
 
-    console.log('[LEFT, RIGHT]: ', [leftWeight, rightWeight]);
+    // console.log('[LEFT, RIGHT]: ', [leftWeight, rightWeight]);
     return [leftWeight, rightWeight];
   }
 }
