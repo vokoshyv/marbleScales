@@ -1,11 +1,13 @@
 var Batch = function(marbleNumber, weight){
   this.used = 0;
-  // this.marbles = [50,50,50,50,50,50,50,50,50,50,50,50];
 
-  if (weight !== 'heavier' && weight !== 'lighter'){
+  if ([0,1,2,3,4,5,6,7,8,9,10,11].indexOf(marbleNumber) === -1){
+    console.error('first argument must be marble from 0 to 11');
+    return;
+  } else if (weight !== 'heavier' && weight !== 'lighter'){
     console.error('2nd argument has to be "heavier" or "lighter"');
     return;
-  }
+  } 
 
   var hidden= [50,50,50,50,50,50,50,50,50,50,50,50];
 
@@ -88,15 +90,6 @@ var Batch = function(marbleNumber, weight){
     console.log('[LEFT, RIGHT]: ', [leftWeight, rightWeight]);
     return [leftWeight, rightWeight];
   }
-
-
 }
-
-
-var test = new Batch(3, 'heavier');
-test.weigh([0,1,2,3,4,5], [6,7,8,9,10,11]);
-test.weigh([0,1,2,3,4,5], [6,7,8,9,10,11]);
-test.weigh([0,1,2,3,4,5], [6,7,8,9,10,11]);
-test.weigh([0,1,2,3,4,5], [6,7,8,9,10,11]);
 
 module.exports = Batch;
