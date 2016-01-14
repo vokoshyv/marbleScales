@@ -1,4 +1,4 @@
-var Scale = function(marbleNumber, weight){
+var Batch = function(marbleNumber, weight){
   this.used = 0;
   // this.marbles = [50,50,50,50,50,50,50,50,50,50,50,50];
 
@@ -6,8 +6,22 @@ var Scale = function(marbleNumber, weight){
     console.error('2nd argument has to be "heavier" or "lighter"');
     return;
   }
+
   var hidden= [50,50,50,50,50,50,50,50,50,50,50,50];
+
+  this.show = function(){
+    return hidden;
+  }
 }
+
+// Batch.prototype.show = function(){
+//   return hidden;
+// }
+
+var test = new Batch(3, 'heavier');
+console.log(test.show());
+
+
 
 // Scale.prototype.set = function(marbleNumber, weight){
 //   // weight should be 1 or 3
@@ -25,50 +39,50 @@ var Scale = function(marbleNumber, weight){
 //   this.used = 0;
 // }
 
-Scale.prototype.weigh = function(left, right){
+// Scale.prototype.weigh = function(left, right){
 
-  // scale weight method can only be used three times
-  if (this.used === 3){
-    console.error('scale use has exceeded limit');
-    return;
-  }
+//   // scale weight method can only be used three times
+//   if (this.used === 3){
+//     console.error('scale use has exceeded limit');
+//     return;
+//   }
 
-  // both left and right should be arrays
-  if (!(Array.isArray(left) && Array.isArray(right))){
-    console.error('inputs have to both be arrays');
-    return;
-  } else if (left.length !== right.length){
-    console.error('inputs have to be of the same size');
-    return;
-  }
+//   // both left and right should be arrays
+//   if (!(Array.isArray(left) && Array.isArray(right))){
+//     console.error('inputs have to both be arrays');
+//     return;
+//   } else if (left.length !== right.length){
+//     console.error('inputs have to be of the same size');
+//     return;
+//   }
 
-  // set up counters for the weights
-  var leftWeight = 0;
-  var rightWeight = 0;
+//   // set up counters for the weights
+//   var leftWeight = 0;
+//   var rightWeight = 0;
 
-  var marbles = this.marbles;
+//   var marbles = this.marbles;
 
-  // weight the marbles against each other
-  left.forEach(function(marbleIndex){
-    leftWeight += marbles[marbleIndex];
-  })
-  right.forEach(function(marbleIndex){
-    rightWeight += marbles[marbleIndex];
-  })
+//   // weight the marbles against each other
+//   left.forEach(function(marbleIndex){
+//     leftWeight += marbles[marbleIndex];
+//   })
+//   right.forEach(function(marbleIndex){
+//     rightWeight += marbles[marbleIndex];
+//   })
 
-  // increase scale usage count
-  this.used++;
+//   // increase scale usage count
+//   this.used++;
 
-  // return which load is heavier or if they are equal
-  if (leftWeight === rightWeight){
-    return 'weightEqual'
-  } else if (leftWeight > rightWeight){
-    return 'leftHeavy'
-  } else if (rightWeight > leftWeight){
-    return 'rightHeavy'
-  }
+//   // return which load is heavier or if they are equal
+//   if (leftWeight === rightWeight){
+//     return 'weightEqual'
+//   } else if (leftWeight > rightWeight){
+//     return 'leftHeavy'
+//   } else if (rightWeight > leftWeight){
+//     return 'rightHeavy'
+//   }
 
 
-}
+// }
 
-module.exports = Scale;
+// module.exports = Scale;
