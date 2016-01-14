@@ -1,5 +1,11 @@
 var Scale = require('./scale.js');
 
-var test = new Scale();
+var set = new Scale();
 
-console.log(test.marbles);
+console.log(set.marbles);
+  
+
+var findOddMarble = function(){
+
+}
+
