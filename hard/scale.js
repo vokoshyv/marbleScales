@@ -1,3 +1,7 @@
+/*
+DO NOT MODIFY THIS PAGE
+*/
+
 var Batch = function(marbleNumber, weight){
   this.used = 0;
 
@@ -91,5 +95,6 @@ var Batch = function(marbleNumber, weight){
     return [leftWeight, rightWeight];
   }
 }
+
 
 module.exports = Batch;
