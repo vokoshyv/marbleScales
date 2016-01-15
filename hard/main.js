@@ -2,9 +2,9 @@
 
 Of Marbles and Scales - HARD MODE
 
-***The problem: You have a 11 marbles of equal weight and one
+***The problem: You have 11 marbles of equal weight and 1
 that is either heavier or lighter. Your goal, using a 
-balance scale is to find that odd marble. You can use the 
+balance scale, is to find that odd marble. You can use the 
 scale only three times. 
 
 
