@@ -61,12 +61,96 @@ var findOddMarble = function(set){
 
   var work1 = set.weigh([0,1,2,3], [4,5,6,7]);
 
-  if (work1[0] === work2[1]){
+  if (work1[0] === work1[1]){
     var work2 = set.weigh([0,1,2], [8,9,10]);
+    if (work2[0] === work2[1]){
+      return 11;
+    } else if (work2[0] > work2[1]){
+      var work3 = set.weigh([8], [9]);
+      if (work3[0] === work3[1]){
+        return 10;
+      } else if (work3[0] > work3[1]){
+        return 9;
+      } else {
+        return 8;
+      }
+    } else {
+      var work3 = set.weigh([8], [9]);
+      if (work3[0] === work3[1]){
+        return 10;
+      } else if (work3[0] > work3[1]){
+        return 8;
+      } else {
+        return 9;
+      }
+    }
+  } else if (work1[0] > work1[1]){
+
+    var work2 = set.weigh([0,8,9,10], [1,2,3,7]);
 
     if (work2[0] === work2[1]){
+      var work3 = set.weigh([4], [5]);
 
+      if (work3[0] === work3[1]){
+        return 6;
+      } else if (work3[0] > work3[1]){
+        return 5;
+      } else {
+        return 4;
+      }
+    } else if (work2[0] > work2[1]){
+      var work3 = set.weigh([0], [11]);
+
+      if (work3[0] === work3[1]){
+        return 7;
+      } else {
+        return 0;
+      }
+    } else {
+      var work3 = set.weigh([1], [2]);
+
+      if (work3[0] === work3[1]){
+        return 3;
+      } else if (work3[0] > work3[1]){
+        return 1;
+      } else {
+        return 2;
+      }
     }
+  } else {
+
+    var work2 = set.weigh([0,8,9,10], [1,2,3,7]);
+
+    if (work2[0] === work2[1]){
+      var work3 = set.weigh([4], [5]);
+
+      if (work3[0] === work3[1]){
+        return 6;
+      } else if (work3[0] > work3[1]){
+        return 4;
+      } else {
+        return 5;
+      }
+    } else if (work2[0] > work2[1]){
+      var work3 = set.weigh([1], [2]);
+
+      if (work3[0] === work3[1]){
+        return 3;
+      } else if (work3[0] > work3[1]){
+        return 2;
+      } else {
+        return 1;
+      }
+    } else {
+      var work3 = set.weigh([11], [0]);
+
+      if (work3[0] === work3[1]){
+        return 7;
+      } else {
+        return 0;
+      }
+    }
+
   }
 
 }
