@@ -50,9 +50,9 @@ questions!
 */
 
 
-// var Batch = require('./scale.js');
+var Batch = require('./scale.js');
 
-// var set = new Batch(3, 'heavier');
+var set = new Batch(3, 'heavier');
 
   
 
