@@ -92,7 +92,13 @@ var Batch = function(marbleNumber, weight){
     var rightWeight = right.reduce(function(sum, index){return sum + hidden[index]}, 0);
 
     // console.log('[LEFT, RIGHT]: ', [leftWeight, rightWeight]);
-    return [leftWeight, rightWeight];
+    if (leftWeight === rightWeight){
+      return [2, 2];
+    } else if (leftWeight > rightWeight){
+      return [3, 2];
+    } else if (rightWeight > leftWeight){
+      return [2, 3];
+    }
   }
 }
 

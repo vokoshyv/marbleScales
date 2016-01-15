@@ -25,7 +25,7 @@ Initialize this set like so:
 
 var set = new Batch(3);
 
-The Batch Class takes a first argument which designates the
+The Batch Class takes a argument which designates the
 marble number (0-8) that is heavier
 
 Batch has a single method 'weigh'. 
@@ -36,7 +36,7 @@ duplicates or overlap. For example, if we were to weigh the
 marbles 0 through 2 versus marbles 3 through 5 in the above 
 set, we would run: 
 
-set.weigh([0,1,2], [3,4,5]); => [LEFT, RIGHT]:  [ 150, 151 ]
+set.weigh([0,1,2], [3,4,5]); => [LEFT, RIGHT]:  [ 2, 3 ]
 
 If in your function, you attempt to call set.weigh more than
 two times, you will face the error message: 
